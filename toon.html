@@ -3,7 +3,6 @@
     <head>
         <title>Cartoon Game</title>
     </head>
-
     <body>
     <h2>Cartoon game by Dustin Greenlee</h2>
 
@@ -21,12 +20,16 @@
         <input type="button" onclick="checkToon()" value="Check the guess">
     </form>
 
-
     <p id="result"></p>
+
+    <div class="container">
+        <img id="image" src="grape.jpg" height="150" width="150" onclick="updatePic()">
+    </div>
 
     <script>
         var darn = 0
         var yahoo = 0
+        var usePic = 1
 
         function checkToon()
         {
@@ -47,7 +50,32 @@
 
             output.innerHTML = "yahoo = " + yahoo + " darn = " + darn
         }
-    </script>
 
+        function updatePic()
+        {
+            image_select = document.getElementById("image")
+            switch(usePic)
+            {
+                case 1: 
+                {
+                    image_select.src = "grape.jpg"
+                    usePic = 2
+                    break
+                }
+                case 2: 
+                {
+                    image_select.src = "raspberry.jpg"
+                    usePic = 3
+                    break
+                }
+                case 3: 
+                {
+                    image_select.src = "lemon.jpg"
+                    usePic = 1
+                    break
+                }
+            }
+        }
+    </script>
     </body>
 </html> 
