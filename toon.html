@@ -3,39 +3,51 @@
     <head>
         <title>Cartoon Game</title>
     </head>
-<body>
 
-<h2>Cartoon game by Dustin Greenlee</h2>
+    <body>
+    <h2>Cartoon game by Dustin Greenlee</h2>
 
-<form>
-    <label for="form1_age">What is your age </label>
-    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+    <form>
+        <label for="form1_password">That's all folks</label>
+        <input type ="password" id="form1_password" name="form1_password" value="Porky Pig">
+        
+        <br><br>
 
-    <label for="form1_nick">What is your nickname </label>
-    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+        <label for="form1_guess">Guess the toon</label>
+        <input type ="text" id="form1_guess" name="form1_guess" autofocus>
+        
+        <br><br>
 
-    <input type="button" onclick="resolveForm()" value="Get values from form">
-</form>
+        <input type="button" onclick="checkToon()" value="Check the guess">
+    </form>
 
 
-<p id="result">This text will be replaced </p>
+    <p id="result"></p>
 
-<script> 
+    <script>
+        var darn = 0
+        var yahoo = 0
 
-function resolveForm (){
-    console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
-    }
-}
-</script>
+        function checkToon()
+        {
+            password = document.getElementById("form1_password").value
+            guess = document.getElementById("form1_guess").value
+            output = document.getElementById("result")
 
-</body>
+            if(password == guess)
+            {
+                yahoo = yahoo + 1
+                alert("You got it")
+            }
+            else
+            {
+                darn = darn + 1
+                alert("Missed me", )
+            }
+
+            output.innerHTML = "yahoo = " + yahoo + " darn = " + darn
+        }
+    </script>
+
+    </body>
 </html> 
