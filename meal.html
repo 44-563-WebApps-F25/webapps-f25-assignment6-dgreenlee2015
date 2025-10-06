@@ -28,8 +28,41 @@
     </form>
     <p id="result"></p>
 
+    <br><br>
+
+    <form>
+        <label for="drink">Enter drink</label>
+        <input type="text" id="drink" name="drink" value="Wine">
+
+        <br><br>
+
+        <label for="starter">Enter Starter</label>
+        <input type="text" id="starter" name="starter">
+
+        <br><br>
+
+        <input type="button" onclick="updateMeal()" value="Update the meal">
+    </form>
+    <p id="meal_result"></p>
+
     <script> 
         var my_meal = {}
+
+        function updateMeal()
+        {
+            my_drink = document.getElementById("drink").value
+            my_starter = document.getElementById("starter").value
+            meal_output = document.getElementById("meal_result")
+        
+            console.log(my_drink)
+            console.log(my_starter)
+
+            my_meal["drink"] = my_drink
+            my_meal["starter"] = my_starter
+
+            console.log(my_meal)
+            meal_output.innerHTML = "Drink: " + my_meal.drink + "; Starter: " + my_meal.starter
+        }
 
         function choices()
         {
@@ -46,24 +79,8 @@
             output.innerHTML = "Salad: " + my_meal.salad + "; Stew: " + my_meal.stew + "; Chocolate: " + my_meal.chocolate
             console.log(my_meal)
         }
-        
-        function resolveForm()
-        {
-            console.log("Getting form values")
-            age = document.getElementById("form1_age").value
-            nick = document.getElementById("form1_nick").value
-            confirmed = confirm("Are these the values? "+age+" and "+nick)
-            
-            out = document.getElementById("result")
-            if(confirmed)
-            {
-                out.innerHTML = "Values were confirmed"
-            }
-            else
-            {
-                out.innerHTML = "Values were not confirmed"
-            }
-        }
+
+
     </script>
 
     </body>
