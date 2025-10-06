@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Meal Plan</title>
+    </head>
+ 
+    <body>
+
+    <h2>Dustin Greenlee plans a meal</h2>
+
+    <form>
+        <label for="cb_salad">Serve salad</label>
+        <input type ="checkbox" id="cb_salad" name="salad" value="true" checked>
+
+        <br><br>
+
+        <label for="cb_stew">Make stew</label>
+        <input type ="checkbox" id="cb_stew" name="stew" value="true" checked>
+
+        <br><br>
+
+        <label for="cb_chocolate">Chocolate for desert</label>
+        <input type ="checkbox" id="cb_chocolate" name="chocolate" value="false">
+
+        <br><br>
+
+        <input type="button" onclick="choices()" value="Meal Choices">
+    </form>
+    <p id="result"></p>
+
+    <script> 
+        var my_meal = {}
+
+        function choices()
+        {
+            salad = document.getElementById("cb_salad").checked
+            stew = document.getElementById("cb_stew").checked
+            chocolate = document.getElementById("cb_chocolate").checked
+            output = document.getElementById("result")
+
+            my_meal={}
+            my_meal.salad = salad
+            my_meal.stew = stew
+            my_meal.chocolate = chocolate
+
+            output.innerHTML = "Salad: " + my_meal.salad + "; Stew: " + my_meal.stew + "; Chocolate: " + my_meal.chocolate
+            console.log(my_meal)
+        }
+        
+        function resolveForm()
+        {
+            console.log("Getting form values")
+            age = document.getElementById("form1_age").value
+            nick = document.getElementById("form1_nick").value
+            confirmed = confirm("Are these the values? "+age+" and "+nick)
+            
+            out = document.getElementById("result")
+            if(confirmed)
+            {
+                out.innerHTML = "Values were confirmed"
+            }
+            else
+            {
+                out.innerHTML = "Values were not confirmed"
+            }
+        }
+    </script>
+
+    </body>
+</html> 
