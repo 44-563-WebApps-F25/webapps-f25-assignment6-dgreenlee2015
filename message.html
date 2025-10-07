@@ -2,48 +2,75 @@
 <html>
     <head>
         <title>Message Cost</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" 
+            integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+
     </head>
+
     <body>
+        <div class="container">
+            <h2>Dustin Greenlee Message Cost</h2>
+        </div>
 
-        <h2>Dustin Greenlee Message Cost</h2>
+        <br>
 
-        <form>
-            <label for="standardCharge">Enter cost per letter</label>
-            <input type ="number" id="standardCharge" name="standardCharge" value=0.50>
-            
-            <br><br>
+        <div class="container">
+            <form class="form-horizontal col-sm-5" style="border: 3px solid black; padding: 15px">
+                <div class="form-group">
+                    <label class="control-label col-sm-9" for="standardCharge">Enter cost per letter</label>
+                    <input type ="number" class="col-sm-2" id="standardCharge" name="standardCharge" value=0.50>
+                </div>
 
-            <label for="discountLength">Enter the length needed for the discount</label>
-            <input type ="number" id="discountLength" name="discountLength" value="20">
+                <br>
 
-            <br><br>
+                <div class="form-group">
+                    <label class="control-label col-sm-9" for="discountLength">Enter the length needed for the discount</label>
+                    <input type ="number" class="col-sm-2" id="discountLength" name="discountLength" value="20">
+                </div>
 
-            <label for="discountCharge">Enter the discount rate</label>
-            <input type ="number" id="discountCharge" name="discountCharge" value="0.25">
+                <br>
 
-            <br><br>
+                <div class="form-group">
+                    <label class="control-label col-sm-9" for="discountCharge">Enter the discount rate</label>
+                    <input type ="number" class="col-sm-2" id="discountCharge" name="discountCharge" value="0.25">
+                </div>
 
-            <input type="button" onclick="amounts()" value="Show total">
-        </form>
-        <p id="result"></p>
+                <br>
+
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <input class="col-sm-4" type="button" onclick="amounts()" value="Show total">
+                </div>
+            </form>
+
+            <div class="col-sm-5" id="result"></div>
+        </div>
 
         <br><br>
 
-        <form>
-            <input type="radio" id="rb_times" name="calc" value="times" onclick="chooseOp()" checked>
-            <label for="rb_times">product</label>
+        <div class="container">
+            <form class="form-horizontal col-sm-2" style="border: 3px solid black; padding: 15px">
+                <input type="radio" id="rb_times" name="calc" value="times" onclick="chooseOp()" checked>
+                <label class="control-label" for="rb_times">product</label>
 
-            <br>
+                <br>
 
-            <input type="radio" id="rb_add" name="calc" value="add" onclick="chooseOp()">
-            <label for="rb_add">sum</label>
+                <input type="radio" id="rb_add" name="calc" value="add" onclick="chooseOp()">
+                <label for="rb_add">sum</label>
 
-            <br>
+                <br>
 
-            <input type="radio" id="rb_mod" name="calc" value="mod" onclick="chooseOp()">
-            <label for="rb_mod">mod</label>
-        </form>
-        <p id="calc_result"></p>
+                <input type="radio" id="rb_mod" name="calc" value="mod" onclick="chooseOp()">
+                <label for="rb_mod">mod</label>
+            </form>
+        
+            <div class="col-sm-2" id="calc_result"></div>
+        </div>
 
         <script>
             function chooseOp()
