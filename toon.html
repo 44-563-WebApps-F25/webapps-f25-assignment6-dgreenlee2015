@@ -17,7 +17,7 @@
         
         <br><br>
 
-        <input type="button" onclick="checkToon()" value="Check the guess">
+        <input id=guess_button type="button" onclick="checkToon()" value="Check the guess">
     </form>
 
     <p id="result"></p>
@@ -46,9 +46,21 @@
             {
                 darn = darn + 1
                 alert("Missed me", )
+
+                if(darn == 10)
+                {
+                    console.log("Too many attempts")
+                    guess_btn = document.getElementById("guess_button")
+                    guess_btn.onclick = wrong_count
+                }
             }
 
             output.innerHTML = "yahoo = " + yahoo + " darn = " + darn
+        }
+
+        function wrong_count()
+        {
+            alert("Sorry, too many wrong guesses.")
         }
 
         function updatePic()

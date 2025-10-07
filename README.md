@@ -2,3 +2,6 @@
 # WebApps-F25-Assignment-6
 Introduction to Java Script and DOM
 
+Hosted at:  https://44-563-webapps-f25.github.io/webapps-f25-assignment6-dgreenlee2015/toon.html
+            https://44-563-webapps-f25.github.io/webapps-f25-assignment6-dgreenlee2015/message.html
+            https://44-563-webapps-f25.github.io/webapps-f25-assignment6-dgreenlee2015/meal.html
